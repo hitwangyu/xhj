@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache"/> 
+	<meta http-equiv="Cache-Control" content="no-cache, must-revalidate"/> 
+	<meta http-equiv="expires" content="0"/>
+    <title>北京和贵礼源商贸有限公司</title>
+    <link rel="stylesheet" type="text/css" href="/css/common/common.css" />
+    <script type="text/javascript" src="/js/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/js/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="/js/common/common.js"></script>
+    <script type="text/javascript">
+        var url_map={'中南文交所': 'http://180.97.2.111:15908/SelfOpenAccount/index.jsp?brokerId=z0163',
+                    '南京文交所': 'http://180.97.2.74:16908/SelfOpenAccount/index.jsp?brokerId=1302',
+                    '天津文交所': 'http://hy.tj-ybk.com:8582/emp/selfOpenAccountAction!preAddZRR.action?parentId=7799'};
+        $(document).ready(function(){
+            var name = getParameter("name");
+            $('.category_text').text(name);
+            $('iframe').attr('src', url_map[name]);
+        });
+    </script>
+</head>
+
+<body>
+    <div id="head_nav">
+    </div>
+    <div class='main_body'>
+        <div class='main_content' style="margin-top: 100px; border: 1px solid #bebebe; padding: 10px;">
+                <h2 class="category_title">
+                    <span class="category_text"></span>
+                </h2>
+                <div>
+                    <iframe width="960" height="1620" frameborder="0" src="http://180.97.2.74:16908/SelfOpenAccount/index.jsp?brokerId=1302" scrolling="no" marginwidth="0" marginheight="0" scr="">
+                </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>
+
+</html>

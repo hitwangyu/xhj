@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhj.dal.mapper.INewsDao">
+
+	<sql id="allColumn">
+		id, title, content, type, author, status, create_time
+	</sql>
+
+	<resultMap type="com.xhj.dal.entity.NewsEntity" id="NewsResult">
+		<result property="id" column="id" />
+		<result property="type" column="type" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="author" column="author" />
+		<result property="status" column="status" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+
+	<insert id="add">
+		insert into
+		tb_news(
+			type, title, content,
+			author,create_time
+		)values(
+			#{type}, #{title}, #{content},
+			#{author}, now()
+		)
+	</insert>
+
+	<update id="update">
+		update tb_news set
+			type = #{type},
+			title = #{title},
+			author = #{author},
+			status = #{status},
+			content = #{content}
+		where 
+			id = #{id}
+	</update>	
+
+	<sql id="queryCondition">
+		<where>
+			<if test="id != null">
+				AND id = #{id}
+			</if>
+			<if test="type != null">
+				AND type = #{type}
+			</if>
+			<if test="title != null">
+				AND title = #{title}
+			</if>
+			<if test="status != null">
+				AND status = #{status}
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultMap="NewsResult">
+		select
+			<include refid="allColumn" />
+		from tb_news
+			<include refid="queryCondition" />
+		<choose>
+			<when test="sortField != null">
+				order by ${sortField}
+				<if test="orderBy==false">
+					desc
+				</if>
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="isQueryAll == false">
+			limit #{firstIndex},#{pageSize}
+		</if>
+	</select>
+	
+	<select id="getNewsListGroupTopN" resultMap="NewsResult">
+		<foreach item="item" index="index" collection="newsTypeSet" separator=" union all ">
+			(select
+				<include refid="allColumn" />
+			from tb_news where type=#{item} and status=1 order by id limit #{topN})
+		</foreach>
+	</select>
+	
+	<select id="queryCount" resultType="java.lang.Integer">
+		select count(*) from tb_news 
+			<include refid="queryCondition" />
+	</select>
+	
+	<delete id="deleteById">
+		delete from tb_news where id = #{id}
+	</delete>
+
+</mapper>

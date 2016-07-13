@@ -1,0 +1,85 @@
+.sb_nav {
+    float: left;
+    width: 280px;
+    margin-left: 0px;
+}
+
+.sidebar
+{
+	clear:both;
+}
+
+.sidebar .sb_nav h3.title {
+    background: rgba(0, 0, 0, 0) url("/img/blue.gif") repeat-x scroll 0 0;
+    border-bottom: 1px solid #cecece;
+    color: #fff;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px;
+    padding: 0 15px;
+    text-align: left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+#sidebar dl {
+    margin-left: 5px;
+}
+
+.sidebar .sb_nav .active {
+    background: #fff none repeat scroll 0 0;
+    padding: 10px 15px;
+}
+
+.list-none {
+    list-style: outside none none;
+    padding: 0;
+}
+
+#sidebar dl dt {
+    background: rgba(0, 0, 0, 0) url("/img/li_ico1.gif") no-repeat scroll 2px 11px;
+    margin-top: 5px;
+    padding: 4px 0 5px 15px;
+}
+
+.sidebar .sb_nav h3.line {
+    margin-top: 15px;
+}
+
+.sidebar .sb_nav .active {
+    background: #fff none repeat scroll 0 0;
+    padding: 10px 15px;
+}
+.editor {
+    color: #333;
+    line-height: 2;
+}
+
+.sidebar .sb_box {
+    background: #fff none repeat scroll 0 0;
+    float: right;
+    overflow: hidden;
+    width: 700px;
+    margin-right: 0px;
+}
+
+
+.sidebar .sb_box h3.title {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border-bottom: 1px solid #ddd;
+    height: 35px;
+    line-height: 35px;
+    position: relative;
+}
+
+#showtext {
+    line-height: 2;
+    padding: 15px;
+}
+
+#sidebar .click_on
+{
+    color: #1c57c4;
+    font-weight: bold;
+}

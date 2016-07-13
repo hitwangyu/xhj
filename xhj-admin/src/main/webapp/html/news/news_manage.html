@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="stylesheet" href="js/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" />
+    <link rel="stylesheet" href="css/common/common.css" />
+    <link rel="stylesheet" href="css/common/page.css" />
+    <script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/jquery.myPagination6.0.js"></script>
+    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="js/lib/ztree/jquery.ztree.core-3.5.min.js"></script>
+    <script type="text/javascript" src="js/common/common.js"></script>
+    <script type="text/javascript" src="js/news/news_manage.js"></script>
+</head>
+
+<body>
+    <div id="main_body">
+        <div id="query_condition">
+        	<form>
+        		<div class="query_condition_grid">
+                <label for="news_class">新闻分类:</label>
+            	<select id="news_class" name="newsClassName">
+            		<option value="">--</option>
+            	</select>
+				</div>
+				<div class="query_condition_grid">
+                <label for="news_title">新闻标题:</label>
+            	<input type="text" id="news_title" name="title"/>
+            	</div>
+            	<div class="query_condition_grid">
+            		<input id="btn_query" type="button" value="查询" />
+            	</div>
+            	<div style="clear:both;"></div>
+            </form>
+        </div>
+        <div id="result">
+        	<table class="table table-condensed table-striped table-hover">
+        		<thead>
+        		<tr>
+        			<th>id</th><th>新闻标题</th><th>新闻分类</th><th>作者</th><th>操作</th>
+        		</tr>
+        		</thead>
+        		<tfoot></tfoot>
+        		<tbody id="result_tbody"></tbody>
+        	</table>
+        </div>
+        <div class="pagination"></div>
+    </div>
+</body>
+
+</html>

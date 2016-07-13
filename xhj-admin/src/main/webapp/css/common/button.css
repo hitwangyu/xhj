@@ -1,0 +1,24 @@
+input.upBtn {
+    display: inline !important;
+    margin-right: 10px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn_submitO {
+    background-color: #ff8c40;
+    background-image: -moz-linear-gradient(center bottom , #ff8c40 0%, #ff8c40 100%);
+    border: 1px solid #cc5e14;
+    border-radius: 2px;
+    box-shadow: 0 1px 0 #ffaf7a inset;
+    color: #fefeff;
+    font-family: "宋体";
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.button {
+    cursor: pointer;
+    text-align: center;
+    z-index: 100;
+}

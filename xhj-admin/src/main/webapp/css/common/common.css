@@ -1,0 +1,47 @@
+html,
+body {
+    margin: 0px;
+    width:100%;
+}
+
+#index_main_body, #main_body
+{
+	width: 100%;
+	background: #f5f6f7 none repeat scroll 0 0;
+}
+
+#main_body{
+    padding-top: 20px;
+}
+
+#query_condition .query_condition_grid
+{
+	float: left;
+	margin-left: 20px;
+}
+
+label{
+	display:inline;
+}
+
+/* table{
+	width: 100%;
+	border-collapse: collapse;
+    border: 1px solid #9CF;
+    text-align: center;
+}
+
+table th {
+    font-weight: normal;
+    background-color: #EEE685;
+}
+
+table tr:nth-child(even) {
+    background-color: #EAF2D3;
+}
+
+table td,
+table th {
+    border: 1px solid #8B795E;
+    text-align: center;
+} */

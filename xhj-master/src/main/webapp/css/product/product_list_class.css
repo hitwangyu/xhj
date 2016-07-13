@@ -1,0 +1,73 @@
+#main_content
+{
+	float: left;
+	width: 680px;
+}
+.product_img
+{
+	width: 220px;
+	/* background: black none repeat scroll 0 0; */
+	height: 250px;
+	padding-top:20px;
+	padding-bottom: 20px   
+}
+
+.product_img img{
+	width: 220px;
+	height: 220px;
+}
+
+.product_desc
+{
+	width: 440px;
+	margin-left: 10px; 
+	height: 250px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.price
+{
+	margin-bottom: 10px;
+}
+
+#right_promotion
+{
+	float: left;
+	width: 280px;
+	margin-left: 10px;
+	border-left:1px solid #bebebe;
+}
+
+.category_title {
+	padding-left: 10px;
+    background: #e8e8e8 none repeat scroll 0 0;
+    font-size: 20px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+}
+
+.product_row
+{
+    height: 270px;
+    border-bottom:1px dashed #bebebe;
+    padding: 5px;
+}
+
+.product_row div
+{
+	float: left;
+}
+
+.product_desc p
+{
+	font-size: 14px;
+	font-family: "microsoft yahei";
+}
+
+.hot_pro_li
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

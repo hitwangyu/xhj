@@ -1,0 +1,54 @@
+        <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="stylesheet" href="css/common/common.css" />
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" />
+    <script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="js/lib/ztree/jquery.ztree.core-3.5.min.js"></script>
+    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="js/common/common.js"></script>
+    <script type="text/javascript" src="js/product/product_modify.js"></script>
+</head>
+
+<body>
+	<div id="main_body">
+        <div id="add_form_block" style="height:100%;width:80%;margin:auto;">
+            <form>
+        	<label for="product_class">商品分类:</label>
+        	<ul id="product_class" class="ztree" style="width:300px; overflow:auto;"></ul>
+            <input id="product_class_value" name="productClassPath" type="hidden" value=""/>
+            <br/>
+            <br/>
+        	<label for="product_name">商品名称:</label>
+            <input type="text" id="product_name" name="productName" />
+            <br/>
+            <br/>
+            <label for="price">商品价格(100~200):</label>
+            <input type="text" id="price" name="price" />
+            <br/>
+            <br/>
+            <label for="img_ids" title="权值最大的图自动缩放为商品列表图">商品详情图（图片id,以逗号分隔）:</label>
+            <input type="text" id="img_ids" name="imgIds" />
+            <br/>
+            <br/>
+            <label for="introduction">商品简介:</label>
+            <textarea id="introduction" cols="30" rows="5" name="introduction"></textarea>
+            <br/>
+            <br/>
+            <label for="description">商品详述:</label>
+            <textarea id="description" cols="30" rows="10" name="description"></textarea>
+            </form>
+            <br/>
+            <br/>
+            <input id="btn_update" type="button" value="修改" />
+        </div>
+    </div>
+</body>
+
+</html>

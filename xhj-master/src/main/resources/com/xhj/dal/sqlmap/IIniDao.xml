@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhj.dal.mapper.IIniDao">
+
+	<sql id="allColumn">
+		ini_key, ini_value, expire_time
+	</sql>
+
+	<resultMap type="com.xhj.dal.entity.IniEntity" id="IniResult">
+		<result property="iniKey" column="ini_key" />
+		<result property="iniValue" column="ini_value" />
+		<result property="expireTime" column="expire_time" />
+	</resultMap>
+
+	<insert id="add">
+		insert into
+		tb_ini(
+			ini_key, ini_value, expire_time
+		)values(
+			#{iniKey}, #{iniValue}, #{expireTime}
+		)
+	</insert>
+
+	<update id="update">
+		update tb_ini set
+			value = #{value},
+			expire_time = #{expireTime}
+		where 
+			and ini_key = #{iniKey}
+	</update>	
+
+	<sql id="queryCondition">
+		<where>
+			<if test="iniKey != null">
+				AND ini_key = #{iniKey}
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultMap="IniResult">
+		select
+			<include refid="allColumn" />
+		from tb_ini
+			<include refid="queryCondition" />
+		<if test="sortField != null">
+			order by ${sortField}
+			<if test="orderBy==false">
+				desc
+			</if>
+		</if>
+	</select>
+	
+	<select id="queryCount" resultType="java.lang.Integer">
+		select count(*) from tb_ini 
+	</select>
+	
+	<delete id="deleteById">
+		delete from tb_ini where ini_key = #{iniKey}
+	</delete>
+
+</mapper>

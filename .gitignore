@@ -1,0 +1,13 @@
+**/.classpath
+**/.project
+**/.settings
+**/.settings/**
+**/target
+**/target/**
+**/bin/**
+**/bin
+Servers
+Servers/**
+RemoteSystemsTempFiles
+RemoteSystemsTempFiles/**
+

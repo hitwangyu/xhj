@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhj.dal.mapper.IImgDao">
+
+	<sql id="allColumn">
+		id, img_addr, link_addr, type, weight, description, create_time
+	</sql>
+
+	<resultMap type="com.xhj.dal.entity.ImgEntity" id="ImgResult">
+		<result property="id" column="id" />
+		<result property="imgAddr" column="img_addr" />
+		<result property="linkAddr" column="link_addr" />
+		<result property="type" column="type" />
+		<result property="weight" column="weight" />
+		<result property="description" column="description" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+
+	<insert id="add">
+		insert into
+		tb_img(
+			img_addr, link_addr, type, weight, description, create_time
+		)values(
+			#{imgAddr}, #{linkAddr}, #{type}, #{weight}, #{description}, now()
+		)
+	</insert>
+
+	<update id="update">
+		update tb_img set
+			img_addr = #{imgAddr},
+			link_addr = #{linkAddr},
+			type = #{type},
+			weight = #{weight},
+			description = #{description}
+		where 
+			id = #{id}
+	</update>	
+
+	<sql id="queryCondition">
+		<where>
+			<if test="id != null">
+				AND id = #{id}
+			</if>
+			<if test="type != null">
+				AND type = #{type}
+			</if>
+			<if test="weight != null">
+				AND weight = #{weight}
+			</if>
+			<if test="likeDescription != null">
+				AND description like concat('%', #{likeDescription}, '%')
+			</if>
+			<if test="idList != null">
+				AND id in
+				<foreach item="item" index="index" collection="idList" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultMap="ImgResult">
+		select
+			<include refid="allColumn" />
+		from tb_img
+			<include refid="queryCondition" />
+		<choose>
+			<when test="sortField != null">
+				order by ${sortField}
+				<if test="orderBy==false">
+					desc
+				</if>
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="isQueryAll == false">
+			limit #{firstIndex},#{pageSize}
+		</if>
+	</select>
+	
+	<select id="queryCount" resultType="java.lang.Integer">
+		select count(*) from tb_img 
+			<include refid="queryCondition" />
+	</select>
+	
+	<delete id="deleteById">
+		delete from tb_img where id = #{id}
+	</delete>
+
+</mapper>

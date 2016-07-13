@@ -1,0 +1,26 @@
+.pageTool {
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+/*css pageTool style pagination*/
+
+.pageTool {
+	padding-right: 3px; padding-left: 3px; padding-bottom: 3px; margin: 3px; padding-top: 3px; text-align: center
+}
+.pageTool a {
+	border-right: #eee 1px solid; padding-right: 5px; border-top: #eee 1px solid; padding-left: 5px; padding-bottom: 2px; margin: 2px; border-left: #eee 1px solid; color: #036cb4; padding-top: 2px; border-bottom: #eee 1px solid; text-decoration: none
+}
+.pageTool a:hover {
+	border-right: #999 1px solid; border-top: #999 1px solid; border-left: #999 1px solid; color: #666; border-bottom: #999 1px solid
+}
+.pageTool a:active {
+	border-right: #999 1px solid; border-top: #999 1px solid; border-left: #999 1px solid; color: #666; border-bottom: #999 1px solid
+}
+.pageTool .current {
+	border-right: #036cb4 1px solid; padding-right: 5px; border-top: #036cb4 1px solid; padding-left: 5px; font-weight: bold; padding-bottom: 2px; margin: 2px; border-left: #036cb4 1px solid; color: #fff; padding-top: 2px; border-bottom: #036cb4 1px solid; background-color: #036cb4
+}
+.pageTool .disabled {
+	border-right: #eee 1px solid; padding-right: 5px; border-top: #eee 1px solid; padding-left: 5px; padding-bottom: 2px; margin: 2px; border-left: #eee 1px solid; color: #ddd; padding-top: 2px; border-bottom: #eee 1px solid
+}

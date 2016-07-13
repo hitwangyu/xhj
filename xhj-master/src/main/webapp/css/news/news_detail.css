@@ -1,0 +1,21 @@
+img{
+	max-width: none;
+	vertical-align: baseline;
+}
+.main_content
+{
+	margin-top: 100px;
+	border: 1px solid #bebebe;
+	padding: 10px;
+}
+
+body{
+	line-height : 1.5;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+.news_title_block
+{
+	text-align: center;
+}

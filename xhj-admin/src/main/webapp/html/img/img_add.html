@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="0" />
+    <link rel="stylesheet" href="css/common/common.css" />
+    <link rel="stylesheet" href="css/img/img_add.css" />
+    <link rel="stylesheet" href="css/common/button.css" />
+    <script type="text/javascript" src="js/lib/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="js/lib/plupload/plupload.full.min.js"></script>
+    <script type="text/javascript" src="js/lib/mustache.min.js"></script>
+    <script type="text/javascript" src="js/common/common.js"></script>
+    <script type="text/javascript" src="js/img/img_add.js"></script>
+</head>
+
+<body>
+	<div id="main_body">
+        <div id="add_form_block" style="height=100%;width:80%;margin:auto;">
+            <form>
+        	<label for="img_type">图片类型:</label>
+            <select id="img_type" name="typeName">
+            	<option value="">--</option>
+            </select>
+            <br/>
+            <br/>
+            <div>
+	            <label>图片上传:&nbsp;</label>
+				<input type="hidden" name="logoUrl" value="" />
+                <button type="button" id="file_upload" class="btn btn-default">浏览</button>
+                 <button type="button" class="btn btn-warning" id="file_upload_submit">上传</button>
+    		</div>
+            <input type="hidden" id="img_imgAddr" name="imgAddr" />
+            <div id="file_upload_txt"></div>
+            <div>
+                <label class="info-key"></label>
+                <span class="info-value" id="file_upload_preview">
+                </span>
+            </div>
+            <br/>
+            <br/>
+        	<label for="img_linkAddr">跳转地址:</label>
+            <input type="text" id="img_linkAddr" name="linkAddr" />
+            <br/>
+            <br/>
+            <label for="img_weight">权值（图片展示优先级,1~100）:</label>
+            <input type="text" id="img_weight" name="weight" />
+            <br/>
+            <br/>
+            <label for="img_description">备注:</label>
+            <textarea id="img_description" cols="30" rows="10" name="description"></textarea>
+            </form>
+            <br/>
+            <br/>
+            <input id="btn_add" type="button" value="添加" />&nbsp;&nbsp;
+            <input id="btn_refresh" type="button" value="刷新图片缓存" />
+        </div>
+    </div>
+</body>
+
+</html>

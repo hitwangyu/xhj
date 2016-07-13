@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xhj.dal.mapper.IProductClassDao">
+
+	<sql id="allColumn">
+		id, name, parentId, depth, path, create_time
+	</sql>
+
+	<resultMap type="com.xhj.dal.entity.ProductClassEntity" id="ProductClassResult">
+		<result property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="parentId" column="parentId" />
+		<result property="depth" column="depth" />
+		<result property="path" column="path" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+
+	<insert id="add">
+		insert into
+		tb_product_class(
+			name, parentId, depth, path, create_time
+		)values(
+			#{name}, #{parentId} ,
+			#{depth}, #{path}, now()
+		)
+	</insert>
+
+	<update id="update">
+		update tb_product_class set
+			name = #{name},
+			parentId = #{parentId},
+			depth = #{depth}, 
+			path = #{path}
+		where 
+			id = #{id}
+	</update>
+	
+	<sql id="queryCondition">
+		<where>
+			<if test="id != null">
+				AND id = #{id}
+			</if>
+			<if test="name != null">
+				AND name = #{name}
+			</if>
+			<if test="parentId != null">
+				AND parentId = #{parentId}
+			</if>
+			<if test="depth != null">
+				AND depth = #{depth}
+			</if>
+			<if test="path != null">
+				AND path = #{path}
+			</if>
+			<if test="prePath != null">
+				AND path like concat(#{prePath}, '%')
+			</if>
+			<if test="idList != null">
+				AND id in
+				<foreach item="item" index="index" collection="idList" open="(" separator="," close=")">
+					#{item}
+				</foreach>
+			</if>
+		</where>
+	</sql>
+
+	<select id="query" resultMap="ProductClassResult">
+		select
+			<include refid="allColumn" />
+		from tb_product_class
+			<include refid="queryCondition" />
+		<choose>
+			<when test="sortField != null">
+				order by ${sortField}
+				<if test="orderBy==false">
+					desc
+				</if>
+			</when>
+			<otherwise>
+				order by id desc
+			</otherwise>
+		</choose>
+		<if test="isQueryAll == false">
+			limit #{firstIndex},#{pageSize}
+		</if>
+	</select>
+	<select id="getMaxDepth" resultType="java.lang.Integer">
+		select max(depth) from tb_product_class
+	</select>
+	
+	<select id="getIdListByQuery" resultType="java.lang.Integer">
+		select id
+		from tb_product_class
+			<include refid="queryCondition" />
+	</select>
+	
+	<select id="queryCount" resultType="java.lang.Integer">
+		select count(*) from tb_product_class 
+			<include refid="queryCondition" />
+	</select>
+	
+	<select id="getProductClassPathByQuery" resultType="java.lang.String">
+		select path from tb_product_class 
+		<include refid="queryCondition" />
+	</select>
+	
+	<delete id="deleteById">
+		delete from tb_product_class where id = #{id}
+	</delete>
+	
+	<delete id="deleteByPath">
+		delete from tb_product_class where path = #{path} or path like concat(#{path}, '/%');
+	</delete>
+
+</mapper>

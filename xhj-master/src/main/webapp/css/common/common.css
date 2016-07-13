@@ -1,0 +1,365 @@
+ul,
+li {
+    list-style-type: none;
+    margin:0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.clear {
+    clear: both;
+}
+
+h1,h2,h3
+{
+    font-weight: 500;
+}
+
+.line{
+    border-bottom: 1px solid #bebebe;
+    clear: both;
+    height: 0;
+    margin: 5px 0;
+}
+
+body {
+    background: #f5f6f7 none repeat scroll 0 0;
+}
+
+#page_top_img
+{
+    height: 98px;
+}
+
+#head_nav,.main_body {
+    width: 1020px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+a:hover {
+    color: #1c57c4
+}
+
+.category_title {
+    background: #e8e8e8 none repeat scroll 0 0;
+    border-left: 8px solid #bcbcbc;
+    font-size: 20px;
+    font-weight: bold;
+    height: 35px;
+    line-height: 35px;
+}
+
+.category_text {
+    margin-left: 10px;
+}
+
+#top_tab {
+    width: 100%;
+}
+
+#top_nav_ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#top_nav {
+    border-bottom: 1px solid #e1e1e1;
+    height: 40px;
+}
+
+.top_nav_li,
+.top_left_nav {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
+    width: 121px;
+}
+
+.top_nav_li>a {
+    font: 400 15px/44px "microsoft yahei";
+    font-weight: normal;
+}
+
+#top_nav_li_kaihu_hover
+{
+	z-index: 900;
+	position: absolute;
+	width: 121px;
+	background: #f5f6f7 none repeat scroll 0 0;
+	top: 140px;
+}
+
+.left_nav_el {
+    font: 400 15px/44px "microsoft yahei";
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+.left_nav {
+    background: #dfdfdf;
+    font: 400 15px/44px "microsoft yahei";
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 100px;
+    height: 200px;
+    z-index: 999;
+}
+
+.left_nav_hover {
+    position: absolute;
+    z-index: 999;
+    margin-left: 110px;
+    margin-top: 0px;
+    width: 800px;
+    background: #f7f7f7 none repeat scroll 0 0;
+    border: 1px solid #b61d1d;
+}
+
+.left_nav_hover_padding {
+    padding: 10px;
+}
+
+/* .left_nav_hover_menu_list>dt {
+    float: left;
+    font-weight: 700;
+    text-align: right;
+    width: 100px;
+    line-height: 40px;
+    margin-top: 10px;
+}
+
+.left_nav_hover_menu_list .dd {
+    float: left;
+    margin-left: 100px;
+    margin-top: 10px;
+} */
+
+.left_nav_hover_menu_list li {
+    float: left;
+    font-weight: 700;
+    text-align: right;
+    width: 100px;
+    line-height: 40px;
+}
+
+.left_nav_hover a {
+    font-size: 14px;
+    margin: 4px 0;
+    padding: 0 8px;
+    white-space: nowrap;
+}
+
+.footer {
+    height: 120px;
+    padding: 20px;
+    width: 100%;
+    background: #dfdfdf;
+}
+
+.inner {
+    margin: 0 auto;
+    position: relative;
+    width: 980px;
+}
+
+.foot-nav {
+    height: 25px;
+    line-height: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.foot-text {
+    padding: 0 0 5px;
+    text-align: center;
+}
+
+.foot-text p {
+    color: #666;
+}
+
+.foot-nav span {
+    font-size: 10px;
+    margin: 0 8px;
+}
+
+.foot-nav a {
+    text-decoration: none;
+}
+
+.price {
+    color: red;
+}
+
+
+/*~~~~~~~~~~~~~~~~QQ客服 begin~~~~~~~~~~~~~~~~~~~*/
+.floatQQ {
+    position: fixed;
+    top: 200px;
+    right: 1px;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+.floatQQ a {
+    color: #00a0e9;
+}
+
+.floatQQ a:hover {
+    color: #ff8100;
+    text-decoration: none;
+}
+
+.floatQQ .floatL {
+    position: relative;
+    width: 28px;
+    float: left
+}
+
+.floatQQ .floatL a {
+    text-indent: -9999px;
+    display: block;
+    font-size: 0px;
+}
+
+.floatQQ .floatR {
+    padding-bottom: 15px;
+    width: 130px;
+    background: url("/img/qqonline/float_bg.gif");
+    background-repeat: no-repeat;
+    background-position: -131px bottom;
+    float: left;
+    overflow: hidden;
+}
+
+.floatQQ .tp {
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    height: 10px;
+    background: url("/img/qqonline/float_bg.gif");
+}
+
+.floatQQ .cn {
+    background: url("/img/qqonline/float_bg.gif");
+    background-repeat: repeat-y;
+    background-position: -262px 0px;
+}
+
+.floatQQ .cn h3 {
+    text-indent: -9999px;
+    height: 36px;
+    font-size: 0px
+}
+
+.floatQQ .cn ul {
+    padding-bottom: 0px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 0px
+}
+
+.floatQQ .cn ul li {
+    border-bottom: #e6e5e4 1px solid;
+    line-height: 36px;
+    word-wrap: break-word;
+    height: 36px;
+    overflow: hidden;
+    word-break: normal;
+}
+
+.floatQQ .titZx {
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: 5px -10px;
+}
+
+.floatQQ .titDh {
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: 5px -66px;
+}
+
+/* .floatQQ .titDc {
+    background: url("/img/company_gzh.jpg") no-repeat;
+    background-position: 5px -124px;
+} */
+
+.floatQQ .qqOn {
+    display: block;
+    margin: 6px 0px 0px 8px;
+}
+
+.floatQQ .icoTl {
+    padding-left: 20px;
+    display: block;
+    font-family: "微软雅黑";
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: 2px -266px;
+    float: left
+}
+
+.floatQQ .icoZx {
+    padding-left: 28px;
+    display: block;
+    float: left;
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: 2px -154px;
+}
+
+.floatQQ .btnOpen {
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: -30px -396px;
+    position: relative;
+    width: 28px;
+    height: 118px;
+    top: 118px;
+    left: 1px;
+}
+
+.floatQQ .btnCtn {
+    background: url("/img/qqonline/float_s.gif") no-repeat;
+    background-position: 0px -396px;
+    position: relative;
+    width: 28px;
+    height: 118px;
+    top: 118px;
+    left: 2px;
+}
+
+.floatQQ ul li h3.titDc a {
+    width: 80px;
+    display: block;
+    height: 36px;
+}
+
+.floatQQ ul li.top {
+    border-bottom: #ace5f9 1px solid;
+}
+
+.floatQQ ul li.bot {
+    border-bottom-STYLE: none;
+}
+
+/*~~~~~~~~~~~~~~~~QQ客服 end~~~~~~~~~~~~~~~~~~~*/
+
+
+/* 消除bootstrap影响 start  ~~~~~~~~~~~~~~~~~~~~~~ */
+label{
+	display:inline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+/* 消除bootstrap影响 end ~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
